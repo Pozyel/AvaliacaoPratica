@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "934326379078",
+    "firebase_url": "https://avaliacao-pratica.firebaseio.com",
+    "project_id": "avaliacao-pratica",
+    "storage_bucket": "avaliacao-pratica.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934326379078:android:e89407a5f5533a0055a047",
+        "android_client_info": {
+          "package_name": "com.inatel.avaliao_pratica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934326379078-qul01r7s3grnbqkj2dus1f2e0bvarjku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inatel.avaliao_pratica",
+            "certificate_hash": "78a566e36442f5ef2ac93e1aab81d6c31393e140"
+          }
+        },
+        {
+          "client_id": "934326379078-cgketkiub8infs37rmou68g7hn2qh2ma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdKF2SBQ1k167PhO-oXPMLazFieKbjBIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934326379078-cgketkiub8infs37rmou68g7hn2qh2ma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
