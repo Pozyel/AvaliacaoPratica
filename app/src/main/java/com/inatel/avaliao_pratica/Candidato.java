@@ -8,6 +8,11 @@ public class Candidato {
     String princHab;
     String fotoDoCandidato;
 
+    public Candidato() {
+
+
+    }
+
     public String getFotoDoCandidato() {
         return fotoDoCandidato;
     }
@@ -16,8 +21,6 @@ public class Candidato {
         this.fotoDoCandidato = fotoDoCandidato;
     }
 
-    public Candidato() {
-    }
 
     public String getTel() {
         return tel;
@@ -61,7 +64,7 @@ public class Candidato {
 
     @Override
     public String toString() {
-        return nome + tel + email + princHab;
+        return    nome;
 
     }
 

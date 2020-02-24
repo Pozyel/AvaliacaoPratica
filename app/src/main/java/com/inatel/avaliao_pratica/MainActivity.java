@@ -14,27 +14,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        inicializarComponentes();
+        botaoCadastrar = findViewById(R.id.btCadastrar);
+        botaoPesquisar = findViewById(R.id.btPesquisar);
         botaoCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent intent1 = new Intent(MainActivity.this,Cadastrar.class);
                 startActivity(intent1);
             }
         });
-       /* botaoPesquisar.setOnClickListener(new View.OnClickListener() {
+        botaoPesquisar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Intent intent2 = new Intent(MainActivity.this,Pesquisar.class)
+            public void onClick(View view) {
+                Intent intent2 = new Intent(MainActivity.this,Pesquisar.class);
+                startActivity(intent2);
             }
-        });*/
+        });
     }
-    private void inicializarComponentes() {
 
-        botaoCadastrar = findViewById(R.id.btCadastrar);
-        botaoPesquisar = findViewById(R.id.btPesquisar);
-
-    }
 }
 
 
