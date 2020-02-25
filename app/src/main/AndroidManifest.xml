@@ -13,8 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Atualizar"></activity>
-        <activity android:name=".Detalhes" />
-        <activity android:name=".teste" />
         <activity android:name=".Pesquisar" />
         <activity android:name=".Cadastrar" />
         <activity android:name=".MainActivity">
