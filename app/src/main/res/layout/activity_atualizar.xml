@@ -4,11 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cadastrar"
-    >
-
+    tools:context=".Atualizar">
     <EditText
-        android:id="@+id/txtNome"
+        android:id="@+id/txtNomeAt"
         android:layout_width="397dp"
         android:layout_height="44dp"
         android:ems="10"
@@ -22,7 +20,7 @@
         app:layout_constraintVertical_bias="0.069" />
 
     <EditText
-        android:id="@+id/txtTelefone"
+        android:id="@+id/txtTelefoneAt"
         android:layout_width="216dp"
         android:layout_height="45dp"
         android:ems="10"
@@ -30,13 +28,13 @@
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintVertical_bias="0.157" />
 
     <EditText
-        android:id="@+id/txtEmail"
+        android:id="@+id/txtEmailAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -44,13 +42,13 @@
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <EditText
-        android:id="@+id/txtPrHab"
+        android:id="@+id/txtPrHabAt"
         android:layout_width="399dp"
         android:layout_height="46dp"
         android:ems="10"
@@ -65,26 +63,26 @@
         app:layout_constraintVertical_bias="0.348" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+
         android:layout_width="415dp"
         android:layout_height="101dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-        app:layout_constraintVertical_bias="0.557">
+        app:layout_constraintVertical_bias="0.719">
 
         <ImageView
-            android:id="@+id/ImgVw"
+            android:id="@+id/ImgVwAt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/unnamed" />
 
         <Button
-            android:id="@+id/btImg"
+            android:id="@+id/btImgAt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -94,15 +92,15 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btCad"
+        android:id="@+id/btAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastrar Candidato"
+        android:text="Atualizar Dados"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintVertical_bias="0.931" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

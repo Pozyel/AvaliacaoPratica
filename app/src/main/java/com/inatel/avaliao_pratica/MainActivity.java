@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent1 = new Intent(MainActivity.this,Cadastrar.class);
                 startActivity(intent1);
+
             }
         });
         botaoPesquisar.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(MainActivity.this,Pesquisar.class);
                 startActivity(intent2);
+
             }
         });
     }

@@ -1,17 +1,25 @@
 package com.inatel.avaliao_pratica;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,6 +29,7 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.MyVi
     private Context context;
     private ArrayList<Candidato> cand;
     private ArrayList<Candidato> backup;
+    private FirebaseStorage guardar;
     public  CandidatoAdapter(Context c,ArrayList<Candidato> cand){
         this.context = c;
         this.cand = cand;
@@ -36,7 +45,7 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Candidato cand = this.cand.get(position);
+       final Candidato cand = this.cand.get(position);
         holder.nome.setText(cand.nome);
         holder.email.setText(cand.email);
         holder.tel.setText(cand.tel);
@@ -44,6 +53,38 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.MyVi
         Picasso.with(context)
                 .load(cand.fotoDoCandidato)
                 .into(holder.foto);
+        holder.deletar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                guardar = FirebaseStorage.getInstance();
+
+                StorageReference imgRef = guardar.getReferenceFromUrl(cand.getFotoDoCandidato());
+
+                imgRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Candidato").child(cand.getId());
+                        databaseReference.removeValue();
+                        Toast.makeText(context,"Candidato Removido",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
+        holder.atualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),Atualizar.class);
+                intent.putExtra("id",cand.getId());
+                intent.putExtra("nome",cand.getNome());
+                intent.putExtra("telefone",cand.getTel());
+                intent.putExtra("email",cand.getEmail());
+                intent.putExtra("princHab",cand.getPrincHab());
+                intent.putExtra("FotoDoCandidato",cand.getFotoDoCandidato());
+                v.getContext().startActivity(intent);
+
+            }
+        });
 
     }
 
@@ -57,6 +98,7 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.MyVi
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView nome,email,tel,prinhab;
         ImageView foto;
+        Button deletar,atualizar;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +107,8 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.MyVi
          tel = itemView.findViewById(R.id.txtTel);
          prinhab = itemView.findViewById(R.id.txtPrincHan);
          foto = itemView.findViewById(R.id.Candidato);
+         deletar = itemView.findViewById(R.id.btdeleta);
+         atualizar = itemView.findViewById(R.id.btatua);
         }
     }
     @Override

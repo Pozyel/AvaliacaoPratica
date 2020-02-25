@@ -12,105 +12,137 @@
         android:id="@+id/cardView"
         android:layout_margin="5dp"
         card_view:cardElevation="4dp">
+
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/Candidato"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="50dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/unnamed">
+
+            </ImageView>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="-145dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nome"
                     android:padding="16dp"
+                    android:text="Nome"
                     android:textSize="16dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/txNome"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nome"
                     android:padding="16dp"
-                    android:textSize="16dp"
-                    />
+                    android:text="Nome"
+                    android:textSize="16dp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Email"
                     android:padding="16dp"
+                    android:text="Email"
                     android:textSize="16dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/txtemai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Email"
                     android:padding="16dp"
-                    android:textSize="16dp"
-                    />
+                    android:text="Email"
+                    android:textSize="16dp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Telefone"
                     android:padding="16dp"
+                    android:text="Telefone"
                     android:textSize="16dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/txtTel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Telefone"
                     android:padding="16dp"
-                    android:textSize="16dp"
-                   />
+                    android:text="Telefone"
+                    android:textSize="16dp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Principais Habilidades"
                     android:padding="16dp"
+                    android:text="Principais Habilidades"
                     android:textSize="16dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/txtPrincHan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Principais Habilidades"
                     android:padding="16dp"
-                    android:textSize="16dp"
-                    />
+                    android:text="Principais Habilidades"
+                    android:textSize="16dp" />
 
             </LinearLayout>
-            <ImageView
-                android:id="@+id/Candidato"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp">
 
-            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btdeleta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Deletar"
+                    android:textAllCaps="false"></Button>
+
+                <Button
+                    android:id="@+id/btatua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Atualizar"
+                    android:textAllCaps="false"></Button>
+            </LinearLayout>
+
+
         </LinearLayout>
 
 

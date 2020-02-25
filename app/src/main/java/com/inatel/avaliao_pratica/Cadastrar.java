@@ -74,11 +74,11 @@ public class Cadastrar extends AppCompatActivity {
     }
 
     private void armazenarFirebase() {
-        Candidato c = new Candidato();
-        String nome = Nome.getText().toString();
-        String tel = Tel.getText().toString();
-        String email = Email.getText().toString();
-        String princhab= PrincHab.getText().toString();
+       final Candidato c = new Candidato();
+       final String nome = Nome.getText().toString();
+       final String tel = Tel.getText().toString();
+       final String email = Email.getText().toString();
+       final String princhab= PrincHab.getText().toString();
 
         if (TextUtils.isEmpty(nome)){
             Toast.makeText(Cadastrar.this,"Por favor Entre com o Nome",Toast.LENGTH_SHORT).show();
@@ -108,13 +108,23 @@ public class Cadastrar extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     downloadImageUrl = uri.toString();
 
+                                    c.setId(UUID.randomUUID().toString());
+                                    c.setNome(nome);
+                                    c.setTel(tel);
+                                    c.setEmail(email);
+                                    c.setPrincHab(princhab);
+                                    c.setFotoDoCandidato(downloadImageUrl);
+                                    databaseReference.child("Candidato").child(c.getId()).setValue(c);
+                                    Toast.makeText(Cadastrar.this,"Candidato Cadastrado com Sucesso",Toast.LENGTH_SHORT).show();
+                                    limparCampos();
+
+
                                 }
                             });
 
 
                         }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
+                    }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
@@ -122,23 +132,14 @@ public class Cadastrar extends AppCompatActivity {
 
 
                         }
-                    })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
                             double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
                             progressDialog.setMessage("Uploaded" +(int)progress+"%");
                         }
                     });
-            c.setId(UUID.randomUUID().toString());
-            c.setNome(nome);
-            c.setTel(tel);
-            c.setEmail(email);
-            c.setPrincHab(princhab);
-            c.setFotoDoCandidato(downloadImageUrl);
-            databaseReference.child("Candidato").child(c.getId()).setValue(c);
-            Toast.makeText(Cadastrar.this,"Candidato Cadastrado com Sucesso",Toast.LENGTH_SHORT).show();
-            limparCampos();
+
         }
 
     }
